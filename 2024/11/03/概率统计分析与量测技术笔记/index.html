@@ -7,6 +7,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
 
   <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
   <link rel="icon" href="/img/fluid.png">
@@ -761,15 +762,15 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/03/%E9%83%A8%E7%BD%B2Github%20actions%E9%82%A3%E4%BA%9B%E4%BA%8B/" title="部署Github actions那些事">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">部署Github actions那些事</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2024/11/03/%E9%83%A8%E7%BD%B2Github%20actions%E9%82%A3%E4%BA%9B%E4%BA%8B/" title="部署Github actions那些事">
+                        <span class="hidden-mobile">部署Github actions那些事</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -888,7 +889,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <script>
   var now = new Date();
   function createtime(){
-      var grt= new Date("07/02/2020 00:00:00");//此处修改你的建站时间或者网站上线时间
+      var grt= new Date("11/03/2024 23:52:16");//此处修改你的建站时间或者网站上线时间
       now.setTime(now.getTime()+250);
       days = (now - grt ) / 1000 / 60 / 60 / 24;
       dnum = Math.floor(days);
@@ -907,7 +908,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       if(String(snum).length ==1 ){
                 snum = "0" + snum;
       }
-      document.getElementById("timeDate").innerHTML = "已经摸了 &nbsp"+dnum+"&nbsp天";  //此次自定义显示内容
+      document.getElementById("timeDate").innerHTML = "已经摸了&nbsp"+dnum+"&nbsp天";  //此次自定义显示内容
       document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分钟&nbsp" + snum + "&nbsp秒，好爽啊。";
   }  //此次自定义显示内容
   setInterval("createtime()",250);
