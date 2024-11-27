@@ -20,21 +20,21 @@
   <meta name="author" content="摸鱼罐头">
   <meta name="keywords" content="">
   
-    <meta name="description" content="整个环境搭建过程参考了https:&#x2F;&#x2F;www.cnblogs.com&#x2F;leebri&#x2F;p&#x2F;17136064.html 的步骤，感谢大佬呢orz。 ssh 配置 已配置sshd_config使得端口为2000，IP固定，可以直接从Windows系统命令行输入ssh zhangyukun@127.0.0.1 -p 2000访问（密码即对应ubuntu密码）。 不是很成功的样子。。。后续再试。">
+    <meta name="description" content="整个环境搭建过程参考了https:&#x2F;&#x2F;www.cnblogs.com&#x2F;leebri&#x2F;p&#x2F;17136064.html 的步骤，感谢大佬呢orz。 ssh 配置 已配置sshd_config使得端口为2000，IP固定，可以直接从Windows系统命令行输入ssh zhangyukun@127.0.0.1 -p 2000访问（密码即对应ubuntu密码）。  不是很成功的样子。。。后续再试。  安装C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL(Ubuntu)+Visual Studio开发环境使用指南">
+<meta property="og:title" content="WSL(Ubuntu)+Visual Studio+CUDA开发">
 <meta property="og:url" content="http://moyufishy.github.io/2024/11/22/WSL+VS/index.html">
 <meta property="og:site_name" content="摸鱼小站">
-<meta property="og:description" content="整个环境搭建过程参考了https:&#x2F;&#x2F;www.cnblogs.com&#x2F;leebri&#x2F;p&#x2F;17136064.html 的步骤，感谢大佬呢orz。 ssh 配置 已配置sshd_config使得端口为2000，IP固定，可以直接从Windows系统命令行输入ssh zhangyukun@127.0.0.1 -p 2000访问（密码即对应ubuntu密码）。 不是很成功的样子。。。后续再试。">
+<meta property="og:description" content="整个环境搭建过程参考了https:&#x2F;&#x2F;www.cnblogs.com&#x2F;leebri&#x2F;p&#x2F;17136064.html 的步骤，感谢大佬呢orz。 ssh 配置 已配置sshd_config使得端口为2000，IP固定，可以直接从Windows系统命令行输入ssh zhangyukun@127.0.0.1 -p 2000访问（密码即对应ubuntu密码）。  不是很成功的样子。。。后续再试。  安装C">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-11-22T11:23:00.000Z">
-<meta property="article:modified_time" content="2024-11-22T12:27:50.707Z">
+<meta property="article:modified_time" content="2024-11-25T08:44:54.667Z">
 <meta property="article:author" content="摸鱼罐头">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>WSL(Ubuntu)+Visual Studio开发环境使用指南 - 摸鱼小站</title>
+  <title>WSL(Ubuntu)+Visual Studio+CUDA开发 - 摸鱼小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="WSL(Ubuntu)+Visual Studio开发环境使用指南"></span>
+            <span id="subtitle" data-typed-text="WSL(Ubuntu)+Visual Studio+CUDA开发"></span>
           
         </div>
 
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          82 字
+          161 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -288,7 +288,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">WSL(Ubuntu)+Visual Studio开发环境使用指南</h1>
+            <h1 id="seo-header">WSL(Ubuntu)+Visual Studio+CUDA开发</h1>
             
             
               <div class="markdown-body">
@@ -296,7 +296,15 @@
                 <p>整个环境搭建过程参考了<a target="_blank" rel="noopener" href="https://www.cnblogs.com/leebri/p/17136064.html">https://www.cnblogs.com/leebri/p/17136064.html</a> 的步骤，感谢大佬呢orz。</p>
 <h2 id="ssh-配置">ssh 配置</h2>
 <p>已配置<code>sshd_config</code>使得端口为2000，IP固定，可以直接从Windows系统命令行输入<code>ssh zhangyukun@127.0.0.1 -p 2000</code>访问（密码即对应ubuntu密码）。</p>
+<blockquote>
 <p>不是很成功的样子。。。后续再试。</p>
+</blockquote>
+<h2 id="安装CUDA">安装CUDA</h2>
+<p>按照官网安装即可。安装完后别忘了把CUDA加入环境变量！在<code>~/.bashrc</code>中加入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">config cuda</span><br>export CUDA_HOME=/usr/local/cuda-&lt;version_of_CUDA&gt; <br>export PATH=$PATH:$CUDA_HOME/bin       <br>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/lib64<br>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_HOME/extras/CUPTI/lib64<br></code></pre></td></tr></table></figure>
+<p>然后保存后<code>source ~/.bashrc</code>即可，最后用<code>nvcc --version</code>检验是否安装成功。</p>
+<h2 id="安装OpenMC">安装OpenMC</h2>
+<p>按照ppt安装，</p>
 
                 
               </div>
@@ -314,7 +322,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>WSL(Ubuntu)+Visual Studio开发环境使用指南</div>
+      <div>WSL(Ubuntu)+Visual Studio+CUDA开发</div>
       <div>http://moyufishy.github.io/2024/11/22/WSL+VS/</div>
     </div>
     <div class="license-meta">
