@@ -29,9 +29,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://moyufishy.github.io/img/9_PMT.png">
 <meta property="og:image" content="http://moyufishy.github.io/img/10_%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0.png">
-<meta property="og:image" content="http://moyufishy.github.io/img/11_CLT_meets_cauchy.png">
+<meta property="og:image" content="http://moyufishy.github.io/img/12_CLT_meets_cauchy.png">
 <meta property="article:published_time" content="2024-11-03T07:21:00.000Z">
-<meta property="article:modified_time" content="2024-12-14T17:51:14.102Z">
+<meta property="article:modified_time" content="2024-12-21T04:59:59.920Z">
 <meta property="article:author" content="摸鱼罐头">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://moyufishy.github.io/img/9_PMT.png">
@@ -1489,7 +1489,7 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
 <p>比如，20个独立同分布的柯西分布相加：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs r">N <span class="hljs-operator">&lt;-</span> 5000<br>s <span class="hljs-operator">&lt;-</span> <span class="hljs-built_in">rep</span><span class="hljs-punctuation">(</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span> N<span class="hljs-punctuation">)</span><br><span class="hljs-keyword">for</span> <span class="hljs-punctuation">(</span>i <span class="hljs-keyword">in</span> <span class="hljs-number">1</span><span class="hljs-operator">:</span><span class="hljs-number">20</span><span class="hljs-punctuation">)</span> <span class="hljs-punctuation">&#123;</span><br>  s <span class="hljs-operator">&lt;-</span> s <span class="hljs-operator">+</span> rcauchy<span class="hljs-punctuation">(</span>N<span class="hljs-punctuation">)</span><br><span class="hljs-punctuation">&#125;</span><br>hist<span class="hljs-punctuation">(</span>s<span class="hljs-punctuation">,</span> breaks<span class="hljs-operator">=</span><span class="hljs-number">200</span><span class="hljs-punctuation">)</span><br></code></pre></td></tr></table></figure>
 <p>结果是：<br>
-<img src="/img/11_CLT_meets_cauchy.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<img src="/img/12_CLT_meets_cauchy.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>可以看到更像是Dirac delta而非正态分布的钟形曲线。</p>
 <h3 id="12-4-马尔可夫">12.4 马尔可夫</h3>
 <p>马尔可夫是切比雪夫的学生，属于圣彼得堡学派，他反对莫斯科学派领袖Pavel Nekrasov提出的“大数定律的必要条件是被加的随机变量相互独立”。因为直觉来讲，自然现象中有时间上的因果联系，因而被加项会有关联。</p>
